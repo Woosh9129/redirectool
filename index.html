@@ -11,9 +11,10 @@
 
     <h2>URL:</h2><br><input type="url" id="inputs-1">
 
-    <button onclick="goto_url()">Go</button> <br>
-    <button onclick="goto_prox()">Proxy</button>
-</body>
+    <button onclick="goto_url()">Go</button> <br> <br>
+    <button onclick="goto_prox()">Proxy</button> <br> <br>
+    <button onclick="goto_gle()">Proxy</button>
+    </body>
 <script>
     function goto_url(){
         const element = document.getElementById('inputs-1');
@@ -22,6 +23,11 @@
     }
     function goto_prox(){
         const element = "https://math.shunt-24.tk"
+
+        document.location.href = element
+    }
+    function goto_gle(){
+        const element = "https://google.com"
 
         document.location.href = element
     }
