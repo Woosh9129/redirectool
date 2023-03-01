@@ -4,32 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>redirect</title>
+    <title>Redirect Tool</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        h1 {
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2 {
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        input[type="url"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 <body>
-    <h1> Kahaan's redirect tool </h1>
+    <h1>Redirect Tool</h1>
 
-    <h2>URL:</h2><br><input type="url" id="inputs-1">
+    <h2>Enter URL:</h2>
+    <input type="url" id="inputs-1">
 
-    <button onclick="goto_url()">Go</button> <br> <br>
-    <button onclick="goto_prox()">Proxy</button> <br> <br>
+    <button onclick="goto_url()">Go to URL</button>
+    <button onclick="goto_prox()">Proxy</button>
     <button onclick="goto_gle()">Google</button>
-    </body>
-<script>
-    function goto_url(){
-        const element = document.getElementById('inputs-1');
 
-        document.location.href = element.value
-    }
-    function goto_prox(){
-        const element = "https://math.shunt-24.tk"
+    <script>
+        function goto_url() {
+            const element = document.getElementById('inputs-1');
+            document.location.href = element.value;
+        }
 
-        document.location.href = element
-    }
-    function goto_gle(){
-        const element = "https://google.com"
+        function goto_prox() {
+            const element = "https://math.shunt-24.tk";
+            document.location.href = element;
+        }
 
-        document.location.href = element
-    }
-</script>
+        function goto_gle() {
+            const element = "https://google.com";
+            document.location.href = element;
+        }
+    </script>
+</body>
 </html>
