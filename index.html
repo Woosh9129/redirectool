@@ -57,7 +57,8 @@
     <input type="url" id="inputs-1">
 
     <button onclick="goto_url()">Go to URL</button>
-    <button onclick="goto_prox()">Proxy</button>
+    <button onclick="goto_prox('rammerhead')">Proxy (Rammerhead) [Recommended]</button>
+    <button onclick="goto_prox('holyunblocker')">Proxy (holy unblocker): uses UltraViolet to work</button>
     <button onclick="goto_gle()">Google</button>
 
     <script>
@@ -66,9 +67,14 @@
             document.location.href = element.value;
         }
 
-        function goto_prox() {
+        function goto_prox(s) {
+            if (s === "rammerhead") {
             const element = "https://spookyskeletonmath.tk/"; // I guess freenom shut down my other domain:( cuz they got jealous | my paid domain was also blocked bruh \ time to steal links! hopefully this works.
             document.location.href = element;
+            } else if (s === "holyunblocker") {
+                const element = "https://zlxrlr.org/";
+                document.location.href = element;
+            }
         }
 
         function goto_gle() {
