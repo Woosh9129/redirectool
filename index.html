@@ -11,19 +11,27 @@
             font-family: Arial, sans-serif;
             font-size: 16px;
             line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         h1 {
             color: #333;
             font-size: 36px;
             font-weight: bold;
-            text-align: center;
-            margin-top: 50px;
+            margin-bottom: 20px;
         }
         h2 {
             color: #333;
             font-size: 24px;
             font-weight: bold;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         input[type="url"] {
             padding: 10px;
@@ -44,6 +52,7 @@
             cursor: pointer;
             font-size: 16px;
             margin-right: 10px;
+            transition: background-color 0.3s ease;
         }
         button:hover {
             background-color: #3e8e41;
@@ -51,35 +60,37 @@
     </style>
 </head>
 <body>
-    <h1>Redirect Tool (by Kahaan)</h1>
+    <container>
+        <h1>Redirect Tool (by Kahaan)</h1>
 
-    <h2>Enter URL:</h2>
-    <input type="url" id="inputs-1">
+        <h2>Enter URL:</h2>
+        <input type="url" id="inputs-1">
 
-    <button onclick="goto_url()">Go to URL</button>
-    <button onclick="goto_prox('rammerhead')">Proxy (Rammerhead) [Recommended]</button>
-    <button onclick="goto_prox('holyunblocker')">Proxy (holy unblocker): uses UltraViolet to work</button>
-    <button onclick="goto_gle()">Google</button>
+        <button onclick="goto_url()">Go to URL</button>
+        <button onclick="goto_prox('rammerhead')">Proxy (Rammerhead)</button>
+        <button onclick="goto_prox('holyunblocker')">Proxy (holy unblocker)</button>
+        <button onclick="goto_gle()">Google</button>
+    </container>
 
     <script>
         function goto_url() {
             const element = document.getElementById('inputs-1');
-            document.location.href = element.value;
+            window.location.href = element.value;
         }
 
         function goto_prox(s) {
             if (s === "rammerhead") {
-            const element = "https://t.loosers.cf"; // I guess freenom shut down my other domain:( cuz they got jealous | my paid domain was also blocked bruh \ time to steal links! hopefully this works.
-            document.location.href = element;
+                const element = "https://r1.shieldbotlist.xyz";
+                window.location.href = element;
             } else if (s === "holyunblocker") {
                 const element = "https://google.com/search?q=Disable+Bc+Dosent+Work";
-                document.location.href = element;
+                window.location.href = element;
             }
         }
 
         function goto_gle() {
             const element = "https://google.com";
-            document.location.href = element;
+            window.location.href = element;
         }
     </script>
 </body>
