@@ -96,7 +96,7 @@
   <body>
     <div class="overlay" id="overlay">
       <div class="modal">
-        <p>You must agree to the below message to continue.</p>
+        <p>You must acknowledge to the below message to continue.</p>
         <p id="announcement">
         </p>
         <button class="agree-button" onclick="closeOverlay()">OK</button>
@@ -159,7 +159,7 @@
 <script>
 
     function fetchAnnouncement() {
-        fetch('announcement.txt')
+        fetch('announcement.html')
           .then(response => response.text())
           .then(announcement => {
             document.getElementById('announcement').innerText = announcement;
