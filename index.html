@@ -97,11 +97,9 @@
     <div class="overlay" id="overlay">
       <div class="modal">
         <p>You must agree to the below message to continue.</p>
-        <p>
-          🔥🖕🖕 adrianna and chase... and more 🖕🖕🔥 go to hell bitches!🔥🔥🔥
-          They are also the best couple of the year!
+        <p id="announcement">
         </p>
-        <button class="agree-button" onclick="closeOverlay()">I Agree</button>
+        <button class="agree-button" onclick="closeOverlay()">OK</button>
       </div>
     </div>
     <h1 id="resp"></h1>
@@ -110,8 +108,7 @@
 
       <h2>Announcement</h2>
       <p id="anc">
-        🔥🖕🖕 adrianna and chase... and more 🖕🖕🔥 go to hell bitches!🔥🔥🔥
-        They are also the best couple of the year!
+
       </p>
 
       <input type="url" id="inputs-1" />
@@ -160,16 +157,26 @@
 </html>
 
 <script>
+
+    function fetchAnnouncement() {
+        fetch('announcement.txt')
+          .then(response => response.text())
+          .then(announcement => {
+            document.getElementById('announcement').innerText = announcement;
+            document.getElementById('anc').innerText = announcement;
+          })
+          .catch(error => console.error('Error fetching announcement:', error));
+    }
   function displayOverlay() {
     document.getElementById("overlay").style.display = "flex";
   }
 
-  // Function to close the overlay
   function closeOverlay() {
     document.getElementById("overlay").style.display = "none";
   }
 
   window.onload = function () {
     displayOverlay();
+    fetchAnnouncement();
   };
 </script>
