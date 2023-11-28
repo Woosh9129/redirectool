@@ -159,13 +159,9 @@
 <script>
 
     function fetchAnnouncement() {
-        fetch('announcement.html')
-          .then(response => response.text())
-          .then(announcement => {
-            document.getElementById('announcement').innerText = announcement;
-            document.getElementById('anc').innerText = announcement;
-          })
-          .catch(error => console.error('Error fetching announcement:', error));
+      let anc = "There are no announcements."
+          document.getElementById('announcement').innerText = announcement;
+          document.getElementById('anc').innerText = announcement;
     }
   function displayOverlay() {
     document.getElementById("overlay").style.display = "flex";
