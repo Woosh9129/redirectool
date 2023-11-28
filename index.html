@@ -1,115 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirect Tool 2023</title>
     <style>
-        body {
-            background: url('https://www.transparenttextures.com/patterns/diagmonds-light.png'); /* Subtle star pattern background */
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        h1 {
-            color: #333;
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #333;
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        input[type="url"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 500px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        button:active {
-            transform: scale(0.95);
-        }
+      body {
+        background: url("https://www.transparenttextures.com/patterns/diagmonds-light.png"); /* Subtle star pattern background */
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      h1 {
+        color: #333;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      h2 {
+        color: #333;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      input[type="url"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 500px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+      button:active {
+        transform: scale(0.95);
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+      }
+      .modal {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .agree-button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
     </style>
-</head>
-<body>
-    <h1 id ="resp"> </h1>
+  </head>
+  <body>
+    <h1 id="resp"></h1>
     <div class="container">
-        <h1>Redirect Tool 2023 by Kahaan</h1>
+      <h1>Redirect Tool 2023 by Kahaan</h1>
 
-        <h2>Announcement</h2>
-        <p>Tariq is a dumbass who wants to tell on me and he's tryna bully me nahhhh 💀 imagine fighting over someone whos just doing what they like doing..</p>
+      <h2>Announcement</h2>
+      <p id="anc">
+        🔥🖕🖕 adrianna and chase... and more 🖕🖕🔥 go to hell bitches!🔥🔥🔥
+        They are also the best couple of the year!
+      </p>
 
-        <input type="url" id="inputs-1">
+      <input type="url" id="inputs-1" />
 
-        <button onclick="goto_url()">Go to URL</button>
-        <button onclick="goto_gle()">Google</button>
+      <button onclick="goto_url()">Go to URL</button>
+      <button onclick="goto_gle()">Google</button>
 
-        <h1>Before you continue:</h1>
-        <p>These are better proxies (I pay for them).</p>
-        <button onclick="goto_prox('uvplain')">Proxy (UV Plain)</button>
-        <button onclick="goto_prox('stellar :skull:')">Proxy (Interstellar) (websockets work)</button>
-        <button onclick="goto_prox('flowos')">Proxy (Flowos)</button>
+      <h1>Before you continue:</h1>
+      <p>These are better proxies (I pay for them).</p>
+      <button onclick="goto_prox('uvplain')">Proxy (UV Plain)</button>
+      <button onclick="goto_prox('stellar :skull:')">
+        Proxy (Interstellar) (websockets work)
+      </button>
+      <button onclick="goto_prox('flowos')">Proxy (Flowos)</button>
     </div>
 
     <script>
-        function goto_url() {
-            const element = document.getElementById('inputs-1');
-            window.location.href = element.value;
-        }
+      function goto_url() {
+        const element = document.getElementById("inputs-1");
+        window.location.href = element.value;
+      }
 
-        function goto_prox(s) {
-            if (s === "rammerhead") {
-                const element = "https://r1.shieldbotlist.xyz";
-                window.location.href = element;
-            } else if (s === "uvplain") {
-                const element = "https://uv.shieldbotlist.xyz";
-                window.location.href = element;
-            } else if  (s === "stellar :skull:") {
-                const element = "https://flowos.shieldbotlist.xyz";
-                window.location.href = element;
-            } else if (s === "flowos") {
-                //document.getElementById("resp").innerHTML = "flowos isnt working right now but im making a fix soon so funny right haha bruh"
-                const element = "https://cyberproxy.shieldbotlist.xyz";
-                window.location.href = element;
-            }
+      function goto_prox(s) {
+        if (s === "rammerhead") {
+          const element = "https://r1.shieldbotlist.xyz";
+          window.location.href = element;
+        } else if (s === "uvplain") {
+          const element = "https://uv.shieldbotlist.xyz";
+          window.location.href = element;
+        } else if (s === "stellar :skull:") {
+          const element = "https://flowos.shieldbotlist.xyz";
+          window.location.href = element;
+        } else if (s === "flowos") {
+          //document.getElementById("resp").innerHTML = "flowos isnt working right now but im making a fix soon so funny right haha bruh"
+          const element = "https://cyberproxy.shieldbotlist.xyz";
+          window.location.href = element;
         }
+      }
 
-        function goto_gle() {
-            const element = "https://google.com";
-            window.location.href = element;
-        }
+      function goto_gle() {
+        const element = "https://google.com";
+        window.location.href = element;
+      }
     </script>
-</body>
+  </body>
 </html>
+
+<script>
+  function displayOverlay() {
+    document.getElementById("overlay").style.display = "flex";
+  }
+
+  // Function to close the overlay
+  function closeOverlay() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  window.onload = function () {
+    displayOverlay();
+  };
+
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <p>You must agree to the below message to continue.</p>
+      <p>
+        {" "}
+        🔥🖕🖕 adrianna and chase... and more 🖕🖕🔥 go to hell bitches!🔥🔥🔥
+        They are also the best couple of the year!
+      </p>
+      <button class="agree-button" onclick="closeOverlay()">
+        I Agree
+      </button>
+    </div>
+  </div>;
+</script>
